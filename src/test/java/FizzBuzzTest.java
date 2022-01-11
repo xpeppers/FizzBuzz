@@ -15,4 +15,11 @@ public class FizzBuzzTest {
         assertEquals(FizzBuzz.say(6), "Fizz");
         assertEquals(FizzBuzz.say(9), "Fizz");
     }
+
+    @Test
+    public void when_it_receives_a_multiple_of_five_it_returns_Buzz() {
+        assertEquals(FizzBuzz.say(5), "Buzz");
+        assertEquals(FizzBuzz.say(25), "Buzz");
+        assertEquals(FizzBuzz.say(50), "Buzz");
+    }
 }
