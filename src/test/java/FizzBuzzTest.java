@@ -7,7 +7,9 @@ public class FizzBuzzTest {
     @Test
     void plain_numbers_case() {
         FizzBuzz fizzBuzz = new FizzBuzz();
-        String result = fizzBuzz.say(1);
-        assertThat(result).isEqualTo("1");
+
+        assertThat(fizzBuzz.say(1)).isEqualTo("1");
+        assertThat(fizzBuzz.say(2)).isEqualTo("2");
     }
+
 }
