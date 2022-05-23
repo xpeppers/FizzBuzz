@@ -23,4 +23,9 @@ public class FizzBuzzTest {
         assertThat(fizzBuzz.say(10)).isEqualTo("Buzz");
     }
 
+    @Test
+    void number_is_multiple_of_3_and_5() {
+        assertThat(fizzBuzz.say(15)).isEqualTo("FizzBuzz");
+    }
+
 }

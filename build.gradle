@@ -18,8 +18,8 @@ test {
     useJUnitPlatform()
 }
 
-sourceCompatibility = '1.8'
-targetCompatibility = sourceCompatibility
+sourceCompatibility = "1.9"
+targetCompatibility = "1.9"
 
 dependencies {
     implementation "org.apache.commons:commons-lang3:3.12.0"

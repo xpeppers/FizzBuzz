@@ -1,15 +1,19 @@
-public class FizzBuzz {
-    public String say(int number) {
-        if(isMultipleOf(number, 3)) {
-          return "Fizz";
-        }
-        if(isMultipleOf(number, 5)) {
-            return "Buzz";
-        }
-        return String.valueOf(number);
-    }
+import io.ale.fizzbuzz.rule.Buzz;
+import io.ale.fizzbuzz.rule.Fizz;
+import io.ale.fizzbuzz.rule.Plain;
+import io.ale.fizzbuzz.rule.Rule;
 
-    private boolean isMultipleOf(int input, int number) {
-        return input % number == 0;
+import java.util.List;
+
+import static java.util.List.of;
+
+public class FizzBuzz {
+    final static List<Rule> RULES = of(new io.ale.fizzbuzz.rule.FizzBuzz(), new Fizz(), new Buzz(), new Plain());
+
+    public String say(int number) {
+        return RULES
+                .stream()
+                .filter(rule -> rule.match(number))
+                .findFirst().map(Rule::say).get();
     }
 }
